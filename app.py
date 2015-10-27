@@ -1,5 +1,7 @@
 from flask import Flask
 
+from stock_scraper import get_data
+
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
