@@ -8,10 +8,10 @@ URL = "http://www.nasdaq.com/quotes/nasdaq-100-stocks.aspx?render=download"
 def get_data():
     r = requests.get(URL)
     data = r.text
-    RESULTS = {'data': []}
+    RESULTS = {'children': []}
 
     for line in csv.DictReader(data.splitlines(), skipinitialspace=True):
-        RESULTS['data'].append({
+        RESULTS['children'].append({
             'name': line['Name'],
             'symbol': line['Symbol'],
             'price': line['lastsale'],
